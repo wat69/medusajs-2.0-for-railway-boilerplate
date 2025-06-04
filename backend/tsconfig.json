@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "module": "node16",
     "moduleResolution": "node16",
+    "typeRoots": ["./src/@types", "./node_modules/@types"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,

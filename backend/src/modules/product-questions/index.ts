@@ -1,9 +1,11 @@
-import { ModuleRegistrationName } from "@medusajs/modules-sdk"
-import { ModuleExports } from "@medusajs/types"
 import { ProductQuestion } from "./entities/product-question.entity"
+import { ProductQuestionService } from "./services/product-question.service"
 
-export const moduleDefinition: ModuleExports = {
-  service: {}, // tom just nu
+export const moduleDefinition = {
+  service: {
+    key: "productQuestionService",
+    // referens till klassen:
+    cls: ProductQuestionService,
+  },
   models: [ProductQuestion],
-  migrations: [], // kan läggas till senare
 }

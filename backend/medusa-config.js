@@ -70,6 +70,10 @@ const medusaConfig = {
         ]
       }
     },
+    {
+      resolve: "./src/modules/product-questions", // din modul
+      options: {}
+    },
     ...(REDIS_URL ? [{
       key: Modules.EVENT_BUS,
       resolve: '@medusajs/event-bus-redis',
