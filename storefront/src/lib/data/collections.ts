@@ -39,6 +39,7 @@ export const getCollectionsWithProducts = cache(
       .filter(Boolean) as string[]
 
     const { response } = await getProductsList({
+      //@ts-ignore
       queryParams: { collection_id: collectionIds },
       countryCode,
     })

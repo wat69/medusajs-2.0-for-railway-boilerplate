@@ -9,6 +9,9 @@ export default async function Footer() {
   const { collections } = await getCollectionsList(0, 6)
   const { product_categories } = await getCategoriesList(0, 6)
 
+  console.log("Footer product_categories", product_categories)
+  console.log("Footer collections", collections)
+
   return (
     <footer className="border-t border-ui-border-base w-full">
       <div className="content-container flex flex-col w-full">

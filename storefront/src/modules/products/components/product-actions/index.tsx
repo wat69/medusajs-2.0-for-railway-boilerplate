@@ -105,6 +105,8 @@ export default function ProductActions({
       countryCode,
     })
 
+    window.dispatchEvent(new CustomEvent('cartUpdated'))
+
     setIsAdding(false)
   }
 

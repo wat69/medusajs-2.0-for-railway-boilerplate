@@ -116,15 +116,6 @@ const AccountNav = ({
             <ul className="flex mb-0 justify-start items-start flex-col gap-y-4">
               <li>
                 <AccountNavLink
-                  href="/account"
-                  route={route!}
-                  data-testid="overview-link"
-                >
-                  Overview
-                </AccountNavLink>
-              </li>
-              <li>
-                <AccountNavLink
                   href="/account/profile"
                   route={route!}
                   data-testid="profile-link"
@@ -182,7 +173,9 @@ const AccountNavLink = ({
 }: AccountNavLinkProps) => {
   const { countryCode }: { countryCode: string } = useParams()
 
-  const active = route.split(countryCode)[1] === href
+  const active = route.split(countryCode)[1] === href || 
+    (href === "/account/profile" && route.split(countryCode)[1] === "/account")
+  
   return (
     <LocalizedClientLink
       href={href}
