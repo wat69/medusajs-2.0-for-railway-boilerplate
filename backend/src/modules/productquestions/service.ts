@@ -1,15 +1,9 @@
 import { MedusaService } from "@medusajs/framework/utils"
-import Question from "./models/post"
+import Post from "./models/post"
 
 class ProductQuestionService extends MedusaService({
-  Question,
-}) {
-    async createPosts(data) {
-      // skapa fråga
-    }
-    async deletePosts(id) {
-      // ta bort fråga
-    }
-  }
-  
+    Post,
+}){
+}
+
 export default ProductQuestionService

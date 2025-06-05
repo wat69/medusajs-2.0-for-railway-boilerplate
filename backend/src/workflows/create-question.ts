@@ -19,7 +19,7 @@ import {
     "create-product-question",
     async (input: CreateProductQuestionInput, { container }) => {
       const questionService: ProductQuestionService = container.resolve(QUESTION_MODULE)
-      const question = await questionService.createPosts(input)
+      const question = await questionService.create(input)
       return new StepResponse(question, question)
     },
     async (question, { container }) => {
