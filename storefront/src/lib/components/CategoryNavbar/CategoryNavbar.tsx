@@ -16,7 +16,7 @@ export const CategoryNavbar = ({
   console.log("CategoryNavbar categories", categories)
 
   return (
-    <nav className="flex md:items-center flex-col md:flex-row">
+    <nav className="flex md:items-center flex-col md:flex-row bg-white dark:bg-[#111827] transition-colors">
       <Link
         href="/store"
         onClick={() => (onClose ? onClose(false) : null)}

@@ -71,7 +71,7 @@ function Navbar() {
     <>
       <div className="w-full bg-[#010f1c] sticky top-0 z-50 shadow-md shadow-black/30 px-0 sm:px-4">
         {/* Mobile and Tablet Layout */}
-        <div className="w-full flex flex-row justify-end items-center px-2 gap-3">
+        <div className="flex flex-row justify-end items-center gap-3 sm:hidden py-2 px-2">
 
           <div className="flex items-center">
             <Link href="/">
