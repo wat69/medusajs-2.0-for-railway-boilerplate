@@ -13,13 +13,14 @@ import {
     question: string
     questionType: string
     productId?: string
+    createdAt: Date
   }
   
   const createProductQuestionStep = createStep(
     "create-product-question",
     async (input: CreateProductQuestionInput, { container }) => {
       const questionService: ProductQuestionService = container.resolve(QUESTION_MODULE)
-      const question = await questionService.create(input)
+      const question = await questionService.createPosts(input)
       return new StepResponse(question, question)
     },
     async (question, { container }) => {
