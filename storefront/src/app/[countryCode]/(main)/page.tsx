@@ -5,8 +5,8 @@ import Hero from "@modules/home/components/hero"
 import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 import NewArrival from "@lib/components/new-arrival"
-// import PopularProducts from "@lib/components/popular-products"
-import FeaturedSection from "@lib/components/featured-section"
+//import PopularProducts from "@lib/components/popular-products"
+//import FeaturedSection from "@lib/components/featured-section"
 
 export const metadata: Metadata = {
   title: "Crusher Brokerage | Buy, Sell or Rent Machinery",
@@ -30,7 +30,6 @@ export default async function Home({
   return (
     <>
       <Hero />
-      <FeaturedSection />
       <NewArrival />
       {/* <PopularProducts /> */}
       <div className="py-12">

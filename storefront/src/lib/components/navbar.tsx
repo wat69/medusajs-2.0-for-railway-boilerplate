@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import color1_small from "../../../public/img/logo_single.png"
+import logo_small from "../../../public/img/logo_single.png"
 import { Button } from "@lib/components/ui/button"
 import CartDropdown from "./right-sidebar" // Update this path
 
@@ -75,7 +75,7 @@ function Navbar() {
 
           <div className="flex items-center">
             <Link href="/">
-              <Image src={color1_small} alt="logo" width={60} height={60} className="2xsmall:w-12 2xsmall:h-12 xsmall:w-16 xsmall:h-16" />
+              <Image src={logo_small} alt="logo" width={60} height={60} className="2xsmall:w-12 2xsmall:h-12 xsmall:w-16 xsmall:h-16" />
             </Link>
           </div>
 
@@ -126,7 +126,7 @@ function Navbar() {
         <div className="hidden sm:flex flex-row justify-center items-center">
           <div className="w-full flex flex-row justify-end items-center">
             <Link href="/">
-              <Image src={color1_small} alt="logo" width={80} height={80} />
+              <img src="/img/logo_single.png" alt="logo" width="60" height="60" />
             </Link>
           </div>
 
