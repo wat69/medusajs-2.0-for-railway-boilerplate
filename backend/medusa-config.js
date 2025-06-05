@@ -22,7 +22,8 @@ import {
   MINIO_BUCKET,
   MEILISEARCH_HOST,
   MEILISEARCH_ADMIN_KEY
-} from 'lib/constants';
+} from './src/lib/constants'
+
 
 loadEnv(process.env.NODE_ENV, process.cwd());
 
@@ -71,7 +72,7 @@ const medusaConfig = {
       }
     },
     {
-      resolve: "./src/modules/product-questions", // din modul
+      resolve: "./src/modules/productquestions", // New custom moduel
       options: {}
     },
     ...(REDIS_URL ? [{
@@ -156,4 +157,9 @@ const medusaConfig = {
 };
 
 console.log(JSON.stringify(medusaConfig, null, 2));
+
+// Lägg till direkt ovanför `defineConfig(...)`
+import * as productquestions from "./src/modules/productquestions"
+console.log("DEBUG: productquestions module:", productquestions)
+
 export default defineConfig(medusaConfig);

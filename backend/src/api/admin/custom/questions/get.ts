@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { ProductQuestion } from "../../../../modules/product-questions/entities/product-question.entity"
+import { ProductQuestion } from "../../../../modules/productquestions/entities/product-question.entity"
 import { EntityManager } from "@mikro-orm/core"
 
 export default (app) => {

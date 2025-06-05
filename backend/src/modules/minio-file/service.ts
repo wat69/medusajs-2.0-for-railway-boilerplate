@@ -7,7 +7,7 @@ import {
   ProviderGetFileDTO
 } from '@medusajs/framework/types';
 import { Client } from 'minio';
-import path from 'path';
+import * as path from "path"
 import { ulid } from 'ulid';
 
 type InjectedDependencies = {
