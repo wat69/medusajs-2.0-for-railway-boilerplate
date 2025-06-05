@@ -47,6 +47,10 @@ const medusaConfig = {
   },
   modules: [
     {
+      resolve: "./src/modules/productquestions", // New custom moduel
+      options: {}
+    },
+    {
       key: Modules.FILE,
       resolve: '@medusajs/file',
       options: {
@@ -70,10 +74,6 @@ const medusaConfig = {
           }])
         ]
       }
-    },
-    {
-      resolve: "./src/modules/productquestions", // New custom moduel
-      options: {}
     },
     ...(REDIS_URL ? [{
       key: Modules.EVENT_BUS,

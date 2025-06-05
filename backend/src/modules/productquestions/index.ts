@@ -1,19 +1,8 @@
-import { ProductQuestionService } from "./services/product-question.service"
-import { ProductQuestion } from "./entities/product-question.entity"
+import ProductQuestionService from "./service"
+import { Module } from "@medusajs/framework/utils"
 
-const mod = {
-    service: {
-      key: "productQuestionService",
-      cls: ProductQuestionService,
-    },
-    models: [ProductQuestion],
-    __joinerConfig: {
-      serviceName: "productQuestionService",
-      primaryKeys: ["id"],
-      alias: "product_question",
-    }
-  }
-  
-  // Gör BARA EN EXPORT, BÅDE FÖR ESM OCH CJS!
-  export = mod
-  
+export const QUESTION_MODULE = "productquestions"
+
+export default Module(QUESTION_MODULE, {
+  service: ProductQuestionService,
+})

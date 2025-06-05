@@ -3,9 +3,8 @@
     "target": "es2019",
     "allowJs": true,
     "esModuleInterop": true,
-    "module": "commonjs",                // <- BYT TILL commonjs !!!
-    "moduleResolution": "node",
-    "typeRoots": ["./src/@types", "./node_modules/@types"],
+    "module": "node16",
+    "moduleResolution": "node16",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
@@ -16,10 +15,7 @@
     "rootDir": "./",
     "baseUrl": ".",
     "paths": {
-      "@modules/*": ["src/modules/*"],
-      "@utils/*": ["utils/*"],
-      "@lib/*": ["src/lib/*"],
-      "@api/*": ["src/api/*"]
+      "*": ["./src/*"]
     },
     "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
