@@ -22,7 +22,7 @@ export const CategoryNavbar = ({
         onClick={() => (onClose ? onClose(false) : null)}
         className={"label-md uppercase px-4 my-3 md:my-0 flex items-center justify-between"}
       >
-        All Products
+        Alla Annonser
       </Link>
       {categories?.map(({ id, handle, name }) => (
         <Link
