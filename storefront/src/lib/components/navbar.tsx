@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import color1_small from "../../../public/img/color1_small.png"
+import color1_small from "../../../public/img/logo_single.png"
 import { Button } from "@lib/components/ui/button"
 import CartDropdown from "./right-sidebar" // Update this path
 
@@ -71,7 +71,8 @@ function Navbar() {
     <>
       <div className="w-full bg-[#010f1c] sticky top-0 z-50 shadow-md shadow-black/30 px-0 sm:px-4">
         {/* Mobile and Tablet Layout */}
-        <div className="flex flex-row justify-between items-center sm:hidden py-2 px-2">
+        <div className="w-full flex flex-row justify-end items-center px-2 gap-3">
+
           <div className="flex items-center">
             <Link href="/">
               <Image src={color1_small} alt="logo" width={60} height={60} className="2xsmall:w-12 2xsmall:h-12 xsmall:w-16 xsmall:h-16" />
@@ -139,7 +140,7 @@ function Navbar() {
               </Button>
             </Link>
 
-            {/* <Link href="/wishlist">
+            { <Link href="/wishlist">
               <Button variant="noBackground">
                 <div className="flex flex-row justify-center items-center relative">
                   <Image src={header_love} alt="love" width={20} height={20} />
@@ -150,7 +151,7 @@ function Navbar() {
                   )}
                 </div>
               </Button>
-            </Link> */}
+            </Link> }
 
             {/* Replace cart button with CartDropdown */}
             <div className="flex flex-row justify-center items-center relative">

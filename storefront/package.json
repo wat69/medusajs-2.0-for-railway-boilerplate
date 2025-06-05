@@ -88,5 +88,10 @@
     "tailwindcss": "^3.0.23",
     "typescript": "^5.3.2"
   },
-  "packageManager": "pnpm@10.5.2+sha1.ca68c0441df195b7e2992f1d1cb12fb731f82d78"
+  "packageManager": "pnpm@10.5.2+sha1.ca68c0441df195b7e2992f1d1cb12fb731f82d78",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
+  }
 }
