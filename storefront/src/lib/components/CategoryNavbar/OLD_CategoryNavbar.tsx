@@ -13,24 +13,14 @@ export const CategoryNavbar = ({
 }) => {
   const { category } = useParams()
 
+  console.log("CategoryNavbar categories", categories)
+
   return (
-    <nav
-      className="
-        flex flex-row items-center
-        overflow-x-auto whitespace-nowrap w-full
-        bg-[#111827] text-white
-        py-2
-        scrollbar-hide
-      "
-      style={{ WebkitOverflowScrolling: "touch" }}
-    >
+    <nav className="flex md:items-center flex-col md:flex-row bg-white dark:bg-[#111827] transition-colors">
       <Link
         href="/store"
         onClick={() => (onClose ? onClose(false) : null)}
-        className={
-          "label-md uppercase px-4 mx-1 flex items-center justify-between" +
-          (!category ? " border-b-2 border-white font-semibold" : " opacity-80 hover:opacity-100")
-        }
+        className={"label-md uppercase px-4 my-3 md:my-0 flex items-center justify-between"}
       >
         Alla Annonser
       </Link>
@@ -40,14 +30,12 @@ export const CategoryNavbar = ({
           href={`/categories/${handle}`}
           onClick={() => (onClose ? onClose(false) : null)}
           className={
-            "label-md uppercase px-4 mx-1 flex items-center justify-between transition-opacity" +
-            (handle === category
-              ? " border-b-2 border-white font-semibold"
-              : " opacity-80 hover:opacity-100")
+            "label-md uppercase px-4 my-3 md:my-0 flex items-center justify-between" +
+            (handle === category ? " md:border-b md:border-primary" : "")
           }
         >
           {name}
-          <ListCollapseIcon size={18} className="-rotate-90 ml-1" />
+          <ListCollapseIcon size={18} className="-rotate-90 md:hidden" />
         </Link>
       ))}
     </nav>
