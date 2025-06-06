@@ -7,18 +7,17 @@ import {
   import { QUESTION_MODULE } from "../modules/productquestions"
   import ProductQuestionService from "../modules/productquestions/service"
   
-  type CreateProductQuestionInput = {
+  type CreateQuestionInput = {
     name: string
     email: string
     question: string
     questionType: string
     productId?: string
-    createdAt: Date
   }
   
-  const createProductQuestionStep = createStep(
+  const createQuestionStep = createStep(
     "create-product-question",
-    async (input: CreateProductQuestionInput, { container }) => {
+    async (input: CreateQuestionInput, { container }) => {
       const questionService: ProductQuestionService = container.resolve(QUESTION_MODULE)
       const question = await questionService.createPosts(input)
       return new StepResponse(question, question)
@@ -29,10 +28,10 @@ import {
     }
   )
   
-  export const createProductQuestionWorkflow = createWorkflow(
+  export const createQuestionWorkflow = createWorkflow(
     "create-product-question",
-    (input: CreateProductQuestionInput) => {
-      const question = createProductQuestionStep(input)
+    (input: CreateQuestionInput) => {
+      const question = createQuestionStep(input)
       return new WorkflowResponse(question)
     }
   )

@@ -24,9 +24,6 @@ export class ProductQuestion {
   @Property({ nullable: true })
   productId?: string
 
-  @Property({ onCreate: () => new Date() })
-  createdAt: Date = new Date()
-
   @Property({ nullable: true })
   handledAt?: Date
 

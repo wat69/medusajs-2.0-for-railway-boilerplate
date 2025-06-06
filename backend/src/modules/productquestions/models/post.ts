@@ -7,8 +7,7 @@ const Post = model.define("post", {
   email: model.text().searchable(),
   question: model.text(),
   questionType: model.text(),
-  productId: model.text().searchable().nullable(),
-  createdAt: model.dateTime()
+  productId: model.text().searchable().nullable()
 })
 
 export default Post
