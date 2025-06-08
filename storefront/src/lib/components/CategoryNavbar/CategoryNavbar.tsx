@@ -13,7 +13,7 @@ export const CategoryNavbar = ({
   const { category } = useParams()
 
   return (
-    <div className="w-full bg-[#111827] sticky top-0 z-30 p-0">
+    <div class="w-full bg-[#111827] sticky top-0 z-50 shadow-md shadow-black/30 px-0 sm:px-4">
       <nav
         className="
           flex flex-row items-center
