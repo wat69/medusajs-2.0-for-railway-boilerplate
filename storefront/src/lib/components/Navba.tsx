@@ -8,8 +8,8 @@ export const Navbar = ({
 }) => {
   console.log("Navbar categories", categories)
   return (
-    <div className="flex border py-4 justify-between px-6">
-      <div className="hidden md:flex items-center">
+    <div className="w-full bg-[#111827] sticky top-0 z-50 shadow-md shadow-black/30 px-0 sm:px-4">
+      <div className="items-center">
         <CategoryNavbar categories={categories} />
       </div>
     </div>
