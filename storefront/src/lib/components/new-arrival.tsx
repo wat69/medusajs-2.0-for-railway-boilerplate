@@ -79,7 +79,7 @@ function NewArrival() {
   ]
 
   return (
-    <div ref={sectionRef} className="py-16 px-4 bg-white">
+    <div ref={sectionRef} className="py-16 px-4 ">
       <div className="container mx-auto max-w-6xl">
         {/* Section header */}
         <div className={`text-center mb-12 transition-all duration-1000 ${
