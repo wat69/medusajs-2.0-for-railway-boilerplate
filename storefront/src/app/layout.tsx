@@ -13,6 +13,10 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <body>
         <main className="relative">{props.children}</main>
         <Toaster />
+        <div className="bg-background text-foreground p-4">
+          Dark mode test!
+        </div>
+
       </body>
     </html>
   )
