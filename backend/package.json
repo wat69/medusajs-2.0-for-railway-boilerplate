@@ -14,11 +14,10 @@
   ],
   "scripts": {
     "build": "medusa build && node src/scripts/postBuild.js",
-    "postbuild": "pnpm migrate",
-    "migrate": "NODE_ENV=production medusa db:migrate",
     "seed": "medusa exec ./src/scripts/seed.ts",
     "ib": "init-backend",
-    "start": "init-backend && cd .medusa/server && medusa start --verbose",
+    "start": "pnpm migrate && init-backend && cd .medusa/server && medusa start --verbose",
+    "migrate": "NODE_ENV=production medusa db:migrate",
     "dev": "medusa develop",
     "email:dev": "email dev --dir=./src/modules/email-notifications/templates --port=3002"   
   },
