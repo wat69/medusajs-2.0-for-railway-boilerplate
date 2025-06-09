@@ -14,13 +14,13 @@
   ],
   "scripts": {
     "build": "medusa build && node src/scripts/postBuild.js",
+    "postbuild": "pnpm migrate",
+    "migrate": "NODE_ENV=production medusa db:migrate",
     "seed": "medusa exec ./src/scripts/seed.ts",
     "ib": "init-backend",
     "start": "init-backend && cd .medusa/server && medusa start --verbose",
     "dev": "medusa develop",
-    "email:dev": "email dev --dir=./src/modules/email-notifications/templates --port=3002",
-    "migrate": "NODE_ENV=production medusa db:migrate",
-    "postinstall": "pnpm migrate"
+    "email:dev": "email dev --dir=./src/modules/email-notifications/templates --port=3002"   
   },
   "dependencies": {
     "@medusajs/admin-sdk": "^2.8.3",
