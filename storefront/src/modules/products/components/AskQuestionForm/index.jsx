@@ -124,7 +124,7 @@ const AskQuestionForm = () => {
     };
 
     return (
-        <div className="mx-auto p-6 bg-white">
+        <div className="mx-auto p-6 ">
             <h1 className="text-3xl  text-center font-bold text-gray-900 mb-8">Ask a Question</h1>
 
             <div className="space-y-8">
@@ -162,7 +162,7 @@ const AskQuestionForm = () => {
                 {/* Modal Overlay */}
                 {isOpen && (
                     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-                        <div className="bg-white rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
+                        <div className=" rounded-xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto">
                             {/* Modal Header */}
                             <div className="flex items-center justify-between p-6 border-b border-gray-200">
                                 <h3 className="text-xl font-semibold text-gray-900 flex items-center gap-2">

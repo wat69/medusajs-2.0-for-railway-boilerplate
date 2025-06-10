@@ -18,9 +18,10 @@ const Login = ({ setCurrentView }: Props) => {
       className="max-w-sm w-full flex flex-col items-center"
       data-testid="login-page"
     >
-      <h1 className="text-large-semi uppercase mb-6">Welcome back</h1>
+      <h1 className="text-large-semi uppercase mb-6">Logga in</h1>
       <p className="text-center text-base-regular text-ui-fg-base mb-8">
-        Sign in to access an enhanced shopping experience.
+        Logga in för att fp alla fördelar! 
+        <br />I vissa fall såsom när du vill skapa en egen annons, så måste du ha ett konto hos oss och vara inloggad. Det underlättar också om du vill genomföra ett köp eller kanske skicka in en fråga kring produkten (kanske lägga ett eget bud?)
       </p>
       <form className="w-full" action={formAction}>
         <div className="flex flex-col w-full gap-y-2">

@@ -36,7 +36,7 @@ export default async function Profile() {
     children: React.ReactNode,
     notificationCount?: number
   }) => (
-    <div className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+    <div className=" rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
       <div className="p-6">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">

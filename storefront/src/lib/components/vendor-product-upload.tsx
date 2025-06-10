@@ -94,7 +94,12 @@ function VendorProductUpload({ customer }: any) {
       files.forEach((file) => formData.append("images", file));
       documents.forEach((file) => formData.append("documents", file));
 
-      const result = await createVendorProduct(formData);
+      const res = await fetch("/api/admin/products", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await res.json();
+
       if (result.success) {
                toast({
                  title: "Annons uppladdad!",
@@ -119,7 +124,7 @@ function VendorProductUpload({ customer }: any) {
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-50 py-8">
-      <div className="w-full max-w-2xl bg-white shadow rounded-lg p-8">
+      <div className="w-full max-w-2xl  shadow rounded-lg p-8">
         <h2 className="text-2xl font-bold text-center mb-4">Skapa ny annons</h2>
 
         {successMessage && (
