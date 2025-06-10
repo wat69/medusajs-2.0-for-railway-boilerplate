@@ -71,15 +71,15 @@ function Navbar() {
     <>
       <div className="w-full bg-[#010f1c] sticky top-0 z-50 shadow-md shadow-black/30 px-0 sm:px-4">
         {/* Mobile and Tablet Layout */}
-        <div className="flex flex-row justify-end items-center gap-3 sm:hidden py-2 px-2">
+        <div className="flex flex-row justify-end items-center gap-4 sm:hidden py-2 px-2">
 
-          <div className="flex items-center">
+          <div className="flex items-left">
             <Link href="/">
-              <Image src={logo_small} alt="logo" width={60} height={60} className="2xsmall:w-12 2xsmall:h-12 xsmall:w-16 xsmall:h-16" />
+              <Image src="/img/logo_single.png" alt="logo" width={60} height={60} className="2xsmall:w-12 2xsmall:h-12 xsmall:w-16 xsmall:h-16" />
             </Link>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             {/* Upload Product Button */}
             <Link href="/upload-new-product">
               <Button variant="noBackground" className="p-2">
@@ -113,7 +113,7 @@ function Navbar() {
             </div>
 
             {/* profile button */}
-            <Link href="/account" className="flex items-center gap-1 p-2">
+            <Link href="/account" className="flex items-center gap-1 p-2 px-4">
               <div className="flex items-center gap-1">
                 <Image src={header_user} alt="user" width={20} height={20} />
                 <span className="text-sm text-white hidden xsmall:inline-block">Mitt konto</span>

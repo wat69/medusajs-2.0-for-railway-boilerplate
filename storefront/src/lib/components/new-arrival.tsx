@@ -88,7 +88,7 @@ function NewArrival() {
             : 'opacity-0 translate-y-8'
         }`}>
           <h3 className="text-amber-500 font-medium mb-2">Nyinkommet!</h3>
-          <h2 className="text-4xl font-bold text-gray-800">De senaste annonserna</h2>
+          <h2 className="text-4xl font-bold ">De senaste annonserna</h2>
         </div>
         
         {/* Product grid */}
