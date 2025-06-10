@@ -164,7 +164,7 @@ function Navbar() {
             </div>
 
             {/* profile button */}
-            <Link href="/account" className="flex items-center gap-1">
+            <Link href="/account" className="flex items-center gap-1 px-4">
               <Image src={header_user} alt="user" width={20} height={20} />
               <span className="text-md text-white">Mitt konto</span>
             </Link>
