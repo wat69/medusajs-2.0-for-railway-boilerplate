@@ -136,7 +136,7 @@ function Navbar() {
             <Link href="/upload-new-product">
               <Button variant="noBackground" className="flex items-center gap-2 px-3 py-2">
                 <Plus className="w-5 h-5 text-white" />
-                <span className="text-sm text-white">Upload Product</span>
+                <span className="text-sm text-white">Skapa annons</span>
               </Button>
             </Link>
 

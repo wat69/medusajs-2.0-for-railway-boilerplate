@@ -1,5 +1,5 @@
 "use client";
-
+import { Toaster } from "@lib/components/ui/sonner"
 import { useState } from "react";
 import {
   Tag,
@@ -95,10 +95,25 @@ function VendorProductUpload({ customer }: any) {
       documents.forEach((file) => formData.append("documents", file));
 
       const result = await createVendorProduct(formData);
-      setSuccessMessage(result.success ? "Annonsen är uppladdad!" : "Något gick fel.");
+      if (result.success) {
+               toast({
+                 title: "Annons uppladdad!",
+                 description: "Din produkt är sparad som utkast.",
+               });
+             } else {
+               toast({
+                 variant: "destructive",
+                 title: "Misslyckades",
+                 description: "Kunde inte skapa produkten. Försök igen.",
+               });
+             }
     } catch (error) {
       console.error(error);
-      setSuccessMessage("Tekniskt fel, försök igen.");
+           toast({
+             variant: "destructive",
+             title: "Tekniskt fel",
+             description: "Nätverksproblem eller serverfel. Vänligen försök igen, kanske med färre eller mindre bilder?",
+           });
     }
   };
 
