@@ -101,24 +101,19 @@ function VendorProductUpload({ customer }: any) {
       const result = await res.json();
 
       if (result.success) {
-               toast({
-                 title: "Annons uppladdad!",
-                 description: "Din produkt är sparad som utkast.",
-               });
+              toast.success("Annons uppladdad!", {
+                description: "Din annons är inskickad. Vi kommer nu granska och godkänna den.",
+              });
              } else {
-              toast({
-                 variant: "destructive",
-                 title: "Misslyckades",
-                 description: "Kunde inte skapa produkten. Försök igen.",
-               });
+              toast.error("Misslyckades", {
+                description: "Kunde inte skapa produkten. Försök igen.",
+              });
              }
     } catch (error) {
       console.error(error);
-           toast({
-             variant: "destructive",
-             title: "Tekniskt fel",
-             description: "Nätverksproblem eller serverfel. Vänligen försök igen, kanske med färre eller mindre bilder?",
-           });
+        toast.error("Tekniskt fel", {
+          description: "Nätverksproblem eller serverfel. Vänligen försök igen.",
+        });
     }
   };
 
