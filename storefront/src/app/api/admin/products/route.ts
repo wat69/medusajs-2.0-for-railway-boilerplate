@@ -1,3 +1,5 @@
+Jag har detta just nu:
+
 // src/app/api/admin/products/route.ts
 import { NextResponse } from "next/server";
 

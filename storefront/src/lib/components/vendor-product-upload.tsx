@@ -1,5 +1,5 @@
 "use client";
-import { Toaster } from "@lib/components/ui/sonner"
+import { toast } from "@lib/components/ui/sonner";
 import { useState } from "react";
 import {
   Tag,
@@ -106,7 +106,7 @@ function VendorProductUpload({ customer }: any) {
                  description: "Din produkt är sparad som utkast.",
                });
              } else {
-               toast({
+              toast({
                  variant: "destructive",
                  title: "Misslyckades",
                  description: "Kunde inte skapa produkten. Försök igen.",
