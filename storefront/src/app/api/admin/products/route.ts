@@ -24,7 +24,7 @@ export async function POST(request: Request) {
 
     // 4) Läs hela kroppen som text först (för bättre felsökning)
     const text = await medusaRes.text();
-    console.log(`◾︎ Medusa svarade ${medusaRes.status} med body:`, text);
+    console.log(`◾ Medusa svarade ${medusaRes.status} med body:`, text);
 
     // 5) Om det inte är OK, skicka vidare felet
     if (!medusaRes.ok) {
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (err) {
     // 7) Full loggning av eventuellt undantag
-    console.error("❌ /api/admin/products crashed:", err);
+    console.error(" /api/admin/products crashed:", err);
     return NextResponse.json(
       { success: false, error: "Serverfel mot Medusa – se loggar" },
       { status: 500 }
