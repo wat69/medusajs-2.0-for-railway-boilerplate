@@ -12,11 +12,14 @@ export async function login(_: any, formData: FormData) {
   }
 
   try {
-    const session = await medusa.auth.authenticate({ email, password })
+    const session = await medusa.auth.login("customer", "emailpass", {
+      email,
+      password,
+    })
 
     if (!session?.access_token) {
-      console.error("access_token saknas i session:", session)
-      return "Inloggning misslyckades – inget access_token"
+      console.error("Ingen access_token:", session)
+      return "Inloggning misslyckades - token saknas"
     }
 
     cookies().set({
@@ -31,7 +34,7 @@ export async function login(_: any, formData: FormData) {
 
     return null
   } catch (err: any) {
-    console.error("Autentiseringsfel:", err)
+    console.error("Fel vid inloggning:", err)
     return err?.message || 'Inloggning misslyckades'
   }
 }
