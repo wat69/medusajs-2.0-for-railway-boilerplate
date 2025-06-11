@@ -1,30 +1,37 @@
-import { cookies } from "next/headers"
-import medusa from "@lib/medusa-client"
+'use server'
+
+import { cookies } from 'next/headers'
+import medusa from '@lib/medusa-client'
 
 export async function login(_: any, formData: FormData) {
-  const email = formData.get("email") as string
-  const password = formData.get("password") as string
+  const email = formData.get('email') as string
+  const password = formData.get('password') as string
 
   if (!email || !password) {
-    return "Email och lösenord krävs."
+    return 'Email och lösenord krävs.'
   }
 
   try {
-    const { access_token } = await medusa.auth.authenticate({ email, password })
+    const session = await medusa.auth.authenticate({ email, password })
 
-    // Skapa en cookie
+    if (!session?.access_token) {
+      console.error("access_token saknas i session:", session)
+      return "Inloggning misslyckades – inget access_token"
+    }
+
     cookies().set({
-      name: "_medusa_jwt",
-      value: access_token,
+      name: '_medusa_jwt',
+      value: session.access_token,
       httpOnly: true,
-      path: "/",
+      path: '/',
       secure: true,
-      sameSite: "strict",
-      maxAge: 60 * 60 * 24 * 7, // 7 dagar
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7,
     })
 
     return null
   } catch (err: any) {
-    return err?.message || "Inloggning misslyckades"
+    console.error("Autentiseringsfel:", err)
+    return err?.message || 'Inloggning misslyckades'
   }
 }
