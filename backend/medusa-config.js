@@ -1,5 +1,6 @@
   import { loadEnv, Modules, defineConfig } from '@medusajs/utils';
-  import {
+  import * as productquestions from "./src/modules/productquestions"
+    import {
     ADMIN_CORS,
     AUTH_CORS,
     BACKEND_URL,
@@ -165,10 +166,5 @@
     ]
   };
 
-  console.log(JSON.stringify(medusaConfig, null, 2));
-
-  // Lägg till direkt ovanför `defineConfig(...)`
-  import * as productquestions from "./src/modules/productquestions"
-  console.log("DEBUG: productquestions module:", productquestions)
-
+    
   export default defineConfig(medusaConfig);
