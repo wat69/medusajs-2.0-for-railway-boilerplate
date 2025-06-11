@@ -10,7 +10,7 @@ export default async function AccountPageLayout({
   const customer = await getCustomer().catch(() => null)
 
   if (!customer) {
-    redirect("/se/login")
+    redirect("/se/account/login")
   }
 
   return <AccountLayout customer={customer}>{children}</AccountLayout>
