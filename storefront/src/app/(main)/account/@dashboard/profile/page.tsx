@@ -13,8 +13,8 @@ import { listRegions } from "@lib/data/regions"
 import { getCustomer } from "@lib/data/customer"
 
 export const metadata: Metadata = {
-  title: "Profile",
-  description: "View and edit your Saint Clothing profile.",
+  title: "Profil",
+  description: "Din profil, din aorder och eventuella annonser.",
 }
 
 export default async function Profile() {

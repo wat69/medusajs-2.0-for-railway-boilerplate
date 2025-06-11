@@ -78,7 +78,7 @@ function CategoryPage({ params }: CategoryPageProps) {
             </div>
 
             {/* Product Status */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className=" p-6 rounded-lg shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Product Status</h3>
               <div className="space-y-3">
                 <div className="flex items-center space-x-2">
@@ -97,7 +97,7 @@ function CategoryPage({ params }: CategoryPageProps) {
             </div>
 
             {/* Categories */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className=" p-6 rounded-lg shadow-sm">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-gray-900">Categories</h3>
                 <Button
@@ -128,13 +128,13 @@ function CategoryPage({ params }: CategoryPageProps) {
             </div>
 
             {/* Top Rated Products */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className=" p-6 rounded-lg shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Top Rated Products</h3>
               {/* Add top rated products content here */}
             </div>
 
             {/* Popular Brands */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className=" p-6 rounded-lg shadow-sm">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Popular Brands</h3>
               {/* Add popular brands content here */}
             </div>
@@ -143,7 +143,7 @@ function CategoryPage({ params }: CategoryPageProps) {
           {/* Main Content */}
           <div className="lg:w-3/4">
             {/* Toolbar */}
-            <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
+            <div className=" p-4 rounded-lg shadow-sm mb-6">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
                 {/* View Toggle */}
                 <div className="flex items-center space-x-2">
@@ -185,7 +185,7 @@ function CategoryPage({ params }: CategoryPageProps) {
             </div>
 
             {/* Products Grid/List */}
-            <div className="bg-white p-6 rounded-lg shadow-sm">
+            <div className=" p-6 rounded-lg shadow-sm">
               {/* Empty state for now - you can add products here */}
               <div className="text-center py-12">
                 <p className="text-gray-500 text-lg">No products found in this category.</p>

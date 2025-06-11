@@ -15,18 +15,15 @@ export const metadata: Metadata = {
 }
 
 
-export default async function Home({
-  params: { countryCode },
-}: {
-  params: { countryCode: string }
-}) {
-  const collections = await getCollectionsWithProducts(countryCode)
-  const region = await getRegion(countryCode)
+export default async function Home({ }: {}) {
+  const collections = await getCollectionsWithProducts(process.env.NEXT_PUBLIC_DEFAULT_REGION || 'se')
+  const region = await getRegion(process.env.NEXT_PUBLIC_DEFAULT_REGION || 'se')
+
 
   if (!collections || !region) {
     return null
   }
-
+  
   return (
     <>
       <Hero />

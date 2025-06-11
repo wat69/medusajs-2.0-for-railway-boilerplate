@@ -22,26 +22,25 @@ const Register = ({ setCurrentView }: Props) => {
       data-testid="register-page"
     >
       <h1 className="text-large-semi uppercase mb-6">
-        Become a krossformedlingen Member
+        Skapa konto
       </h1>
       <p className="text-center text-base-regular text-ui-fg-base mb-4">
-        Create your krossformedlingen store profile, and get access to an enhanced
-        shopping experience.
+        Skapa ett konto om du vill skapa en egen annons. Det underlättar också om du vill genomföra ett köp eller kanske skicka in en fråga kring produkten (kanske lägga ett eget bud?) - eller bara vill spara en favorit-lista eller en kundvagn.
       </p>
       <form className="w-full flex flex-col" action={formAction}>
         <div className="flex flex-col w-full gap-y-2">
           <Input
-            label="First name"
+            label="Förnamn"
             name="first_name"
             required
-            autoComplete="given-name"
+            autoComplete="Förnamn"
             data-testid="first-name-input"
           />
           <Input
-            label="Last name"
+            label="Efternamn"
             name="last_name"
             required
-            autoComplete="family-name"
+            autoComplete="Efternamn"
             data-testid="last-name-input"
           />
           <Input
@@ -53,50 +52,50 @@ const Register = ({ setCurrentView }: Props) => {
             data-testid="email-input"
           />
           <Input
-            label="Phone"
+            label="Mobil"
             name="phone"
             type="tel"
-            autoComplete="tel"
+            autoComplete="Tele"
             data-testid="phone-input"
           />
           <Input
-            label="Password"
+            label="Lösenord"
             name="password"
             required
             type="password"
-            autoComplete="new-password"
+            autoComplete="Eget lösenord (minst 6 tecken)"
             data-testid="password-input"
           />
         </div>
         <ErrorMessage error={message} data-testid="register-error" />
         <span className="text-center text-ui-fg-base text-small-regular mt-6">
-          By creating an account, you agree to krossformedlingen Store&apos;s{" "}
+          När du skapar ditt konto så kommer vi hantera din data och dina personuppgifter enligt vår integritetspolicy&apos;s{" "}
           <LocalizedClientLink
             href="/content/privacy-policy"
             className="underline"
           >
-            Privacy Policy
+            Integritetspolicy
           </LocalizedClientLink>{" "}
           and{" "}
           <LocalizedClientLink
             href="/content/terms-of-use"
             className="underline"
           >
-            Terms of Use
+            Köpvillkor
           </LocalizedClientLink>
           .
         </span>
         <SubmitButton className="w-full mt-6" data-testid="register-button">
-          Join
+          Skapa konto
         </SubmitButton>
       </form>
       <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Already a member?{" "}
+        Har du redan ett konto?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
           className="underline"
         >
-          Sign in
+          Logga in
         </button>
         .
       </span>

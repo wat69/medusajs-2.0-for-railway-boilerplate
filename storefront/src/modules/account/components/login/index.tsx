@@ -1,10 +1,11 @@
-import { useFormState } from "react-dom"
+'use client'
 
-import { LOGIN_VIEW } from "@modules/account/templates/login-template"
-import Input from "@modules/common/components/input"
-import ErrorMessage from "@modules/checkout/components/error-message"
-import { SubmitButton } from "@modules/checkout/components/submit-button"
-import { login } from "@lib/data/customer"
+import { useFormState } from 'react-dom'
+import { LOGIN_VIEW } from '@modules/account/templates/login-template'
+import Input from '@modules/common/components/input'
+import ErrorMessage from '@modules/checkout/components/error-message'
+import { SubmitButton } from '@modules/checkout/components/submit-button'
+import { login } from '@app/actions/login'
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
@@ -14,51 +15,25 @@ const Login = ({ setCurrentView }: Props) => {
   const [message, formAction] = useFormState(login, null)
 
   return (
-    <div
-      className="max-w-sm w-full flex flex-col items-center"
-      data-testid="login-page"
-    >
+    <div className="max-w-sm w-full flex flex-col items-center">
       <h1 className="text-large-semi uppercase mb-6">Logga in</h1>
-      <h4 className="text-large-semi uppercase mb-8">Logga in för att få alla fördelar! </h4>
-      <p className="text-center text-base-regular text-ui-fg-base mb-8">
-        I vissa fall såsom när du vill skapa en egen annons, så måste du ha ett konto hos oss och vara inloggad. Det underlättar också om du vill genomföra ett köp eller kanske skicka in en fråga kring produkten (kanske lägga ett eget bud?)
+      <p className="text-center text-base-regular mb-6">
+        Logga in för att skapa annonser och hantera dina köp.
       </p>
       <form className="w-full" action={formAction}>
-        <div className="flex flex-col w-full gap-y-2">
-          <Input
-            label="Email"
-            name="email"
-            type="email"
-            title="Enter a valid email address."
-            autoComplete="email"
-            required
-            data-testid="email-input"
-          />
-          <Input
-            label="Password"
-            name="password"
-            type="password"
-            autoComplete="current-password"
-            required
-            data-testid="password-input"
-          />
+        <div className="flex flex-col gap-y-2">
+          <Input label="E-post" name="email" type="email" required />
+          <Input label="Lösenord" name="password" type="password" required />
         </div>
-        <ErrorMessage error={message} data-testid="login-error-message" />
-        <SubmitButton data-testid="sign-in-button" className="w-full mt-6">
-          Sign in
-        </SubmitButton>
+        <ErrorMessage error={message} />
+        <SubmitButton className="w-full mt-6">Logga in</SubmitButton>
       </form>
-      <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        Not a member?{" "}
-        <button
-          onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)}
-          className="underline"
-          data-testid="register-button"
-        >
-          Join us
+      <p className="mt-6 text-sm text-center">
+        Inte medlem?{" "}
+        <button onClick={() => setCurrentView(LOGIN_VIEW.REGISTER)} className="underline">
+          Skapa konto
         </button>
-        .
-      </span>
+      </p>
     </div>
   )
 }
